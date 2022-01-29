@@ -4,16 +4,27 @@ import matplotlib
 from matplotlib import pylab as plt
 from pylab import *
 
-def print_game(GameID, p_reader):
+def plot_game(GameID, p_reader):
+    # list of rows
     row_list = list(p_reader)
-    #print(row_list)
+    # list of GameID "0" -rows 
     player = []
     for row in row_list:
         if row[0] == "0":
             player.append(row)
-    print(player)
+    
+    p0 = player[0]
+    p1 = player[1]
+    p2 = player[2]
+    P0 = p0[2:22]
+    P1 = p1[2:22]
+    P2 = p2[2:22]
+    print(P1)
+    print(P2)
+    print(P0)
 
 
-with open('player.csv', 'r') as playerfile:
+
+with open('Zaubern/data/player.csv', 'r') as playerfile:
     p_reader = csv.reader(playerfile)
-    print_game(0, p_reader)
+    plot_game(0, p_reader)
